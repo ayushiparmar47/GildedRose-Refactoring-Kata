@@ -65,13 +65,13 @@ describe GildedRose do
       it "degrades quality twice as fast as regular items" do
         items = [Item.new("Conjured Mana Cake", 5, 10)]
         GildedRose.new(items).update_quality
-        expect(items[0].to_s).to eq "Conjured Mana Cake, 4, 9"
+        expect(items[0].to_s).to eq "Conjured Mana Cake, 4, 8"
       end
 
       it "it will degrades quality twice as fast after sell by date" do
         items = [Item.new("Conjured Mana Cake", 0, 10)]
         GildedRose.new(items).update_quality
-        expect(items[0].to_s).to eq "Conjured Mana Cake, -1, 9"
+        expect(items[0].to_s).to eq "Conjured Mana Cake, -1, 8"
       end
 
       it "it will not degrade quality below 0" do
